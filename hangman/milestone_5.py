@@ -1,7 +1,5 @@
 import random
 
-word_list = ["Guava", "Apple", "Peach", "Blueberry", "Pear"]
-
 class Hangman:
     '''
     Defines a class called Hangman with attributes: word(str), word_guessed(list), num_letters(int), num_lives(int), word_list(list)
@@ -66,4 +64,6 @@ def play_game(word_list):
             print("Congratulations. You won the game")
             break
             
-play_game(word_list = word_list)
+if __name__ == '__main__':
+    word_list = ["Guava", "Apple", "Peach", "Blueberry", "Pear"]
+    play_game(word_list)
