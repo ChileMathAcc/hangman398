@@ -3,7 +3,10 @@ import random
 word_list = ["Guava", "Apple", "Peach", "Blueberry", "Pear"]
 print(word_list)
 
-word = random.choice(word_list)
+def select_random_word(word_list):
+    word = random.choice(word_list)
+    return word
+
 print(word)
 
 guess = input('Input a single letter: ')
