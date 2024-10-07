@@ -3,7 +3,11 @@ import random
 word_list = ["Guava", "Apple", "Peach", "Blueberry", "Pear"]
 
 class Hangman:
-    
+    '''
+    Defines a class called Hangman with attributes: word(str), word_guessed(list), num_letters(int), num_lives(int), word_list(list)
+    and list_of_guess(list). This class has to methods: ask_for_input and check_guess. The former obtains an input from the user and
+    checks its validity while the latter checks if the users input is a substring of the word attribute.
+    '''
     def __init__(self, word_list, num_lives):
         self.word = random.choice(word_list).lower()
         self.word_guessed = ['_' for letter in self.word]
@@ -12,7 +16,10 @@ class Hangman:
         self.word_list = word_list
         self.list_of_guesses = []
         
-    def __check_guess__(self, guess): #method for checking if guessed letter is part of the word
+    def __check_guess__(self, guess):
+        '''
+        Method for checking if the guessed letter is part of the word
+        '''
         guess = guess.lower()
         if guess in set(self.word):
             print(f"Good Guess! {guess} is in the word.")
@@ -26,7 +33,11 @@ class Hangman:
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left")
     
-    def __ask_for_input__(self): #Asks the user for input, check if that input is a single letter then checks if that letter is in the word
+    def __ask_for_input__(self):
+        '''
+        Method that asks the user for input, checks if that input is a single letter then checks if that letter is in the word
+        attribute
+        '''
         while True:
             guess = input("Input a single letter: ")
             if not (len(guess) == 1 and guess.isalpha()):
@@ -40,6 +51,9 @@ class Hangman:
                 break
 
 def play_game(word_list):
+    '''
+    Function that runs the Hangman game, ends the game if all lives are lost of if the user guesses the word
+    '''
     num_lives = 5
     game = Hangman(word_list = word_list, num_lives = num_lives)
     while True:
