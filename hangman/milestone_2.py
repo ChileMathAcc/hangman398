@@ -7,6 +7,8 @@ def select_random_word(word_list):
     word = random.choice(word_list)
     return word
 
+word = select_random_word(word_list)
+
 print(word)
 
 guess = input('Input a single letter: ')
